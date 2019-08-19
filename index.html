@@ -3,6 +3,7 @@
   <head>
     <title>Trivia Game</title>
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
   </head>
   <body>
     <header>
@@ -30,20 +31,25 @@
     </header>
   <body>
     <div id="gameTitle"></div>
-    <button type="button">Start</button>
+    <button id="button">Start</button>
     
-    <div id="timer">countdown Here</div>
+    <div id="timer"></div>
     
-    <div id="Question">Question Here</div>
-    <div id="Answer1">answer Here</div>
-    <div id="Answer2">answer Here</div>
-    <div id="Answer3">answer Here</div>
-    <div id="Answer4">answer Here</div>
+    <div id="Question"></div>
+    <div id="Answer1"></div>
+    <div id="Answer2"></div>
+    <div id="Answer3"></div>
+    <div id="Answer4"></div>
 
   <div id="final scores">
     <div id="correct"></div>
     <div id="wrong"></div>
-
-  </div>    
+  </div> 
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"
+></script>
+<script src="assets/javascript/app.js"></script>
   </body>
 </html>
