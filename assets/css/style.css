@@ -1,0 +1,80 @@
+header {
+  background: #fff;
+  border-bottom: solid;
+  border-bottom-width: 100%;
+  border-color: #cccccc;
+  height: 77px;
+  width: 100%;
+}
+
+nav {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #777777;
+  size: 18pt;
+  float: right;
+  padding-top: 30px;
+  margin-right: 100px;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  display: inline;
+  padding: 0px 25px 0px 25px;
+  border-right: 1px solid #dddddd;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+a:link {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #777777;
+  text-decoration: none;
+}
+a:visited {
+  color: #4aaaa5;
+}
+a:hover {
+  color: #ffce6e;
+}
+
+h1 {
+  font-family: "Georgia", Times, Times New Roman, serif;
+  color: #4aaaa5;
+  text-align: center;
+  font-size: 50pt;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+body {
+  background: #dddddd;
+  background: url(../images/fishnets-and-hearts.png);
+  margin: 0px;
+}
+main {
+  background: #fff;
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#button {
+  margin-left: 50%;
+  margin-right: 50%;
+  border-radius: 12px;
+  padding: 15px 32px;
+  background-color: white;
+  color: #4aaaa5;
+  font-size: 18pt;
+}
+#timer {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #4aaaa5;
+  font-size: 38pt;
+  padding-top: 30px;
+  text-align: center;
+}
