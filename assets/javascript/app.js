@@ -47,24 +47,31 @@ $(document).ready(function() {
   $("#button").click(function() {
     run();
     $("#button").hide();
+    $("#Question").html("<h2>" + questionArray[0].q + "</h2>");
+    $("#Question").append("<h2>" + questionArray[0].a + "</h2>");
+    $("#Question").append("<h2>" + questionArray[0].b + "</h2>");
+    $("#Question").append("<h2>" + questionArray[0].c + "</h2>");
+    $("#Question").append("<h2>" + questionArray[0].d + "</h2>");
   });
   //shows starting number
-  $("#timer").html("<h2>" + number + "</h2>");
+  // $("#timer").html("<h3>" + number + "</h3>");
   //starts
+
+  // run function for timer
   function run() {
+    $("#timer").html("<h2>" + number + "</h2>");
     timer = setInterval(decrement, 1000);
   }
-
+  //prints timer results, stops at 0
   function decrement() {
     number--;
 
     $("#timer").html("<h2>" + number + "</h2>");
-
     if (number === 0) {
       stop();
     }
   }
-
+  //function to stop/cancel/reset timer
   function stop() {
     clearInterval(timer);
   }
