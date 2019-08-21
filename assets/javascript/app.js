@@ -3,6 +3,7 @@ $(document).ready(function() {
   let number = 30;
   let numberTwo = 5;
   let timer;
+  let timer2;
 
   // questions and answers
   const questionArray = [
@@ -36,26 +37,37 @@ $(document).ready(function() {
     },
     {
       q: "Who was Walt Disney's personal favorite concept artist?",
-      a: "Glene Keane",
-      b: "Mary Blair",
+      a: "Mary Blair",
+      b: "Glene Keane",
       c: "Floyd Norman",
       d: "Don Lusk"
     }
   ];
-
+  // const answerArray = [b, b, c, d, a];
   //on button click, timer starts
   $("#button").click(function() {
     run();
     $("#button").hide();
-    $("#Question").html("<h2>" + questionArray[0].q + "</h2>");
-    $("#Question").append("<h2>" + questionArray[0].a + "</h2>");
-    $("#Question").append("<h2>" + questionArray[0].b + "</h2>");
-    $("#Question").append("<h2>" + questionArray[0].c + "</h2>");
-    $("#Question").append("<h2>" + questionArray[0].d + "</h2>");
+    questionsAnswers();
+    // $("#Question").html("<h2>" + questionArray[0].q + "</h2>");
+    // $("#Question").append("<h2>" + questionArray[0].a + "</h2>");
+    // $("#Question").append("<h2>" + questionArray[0].b + "</h2>");
+    // $("#Question").append("<h2>" + questionArray[0].c + "</h2>");
+    // $("#Question").append("<h2>" + questionArray[0].d + "</h2>");
   });
   //shows starting number
-  // $("#timer").html("<h3>" + number + "</h3>");
+
   //starts
+  function questionsAnswers() {
+    for (let index = 0; index <= questionArray.length; index++) {
+      // const questions = questionArray[index];
+      $("#Question").html("<h2>" + questionArray[index].q + "</h2>");
+      $("#Question").append("<h2>" + questionArray[index].a + "</h2>");
+      $("#Question").append("<h2>" + questionArray[index].b + "</h2>");
+      $("#Question").append("<h2>" + questionArray[index].c + "</h2>");
+      $("#Question").append("<h2>" + questionArray[index].d + "</h2>");
+    }
+  }
 
   // run function for timer
   function run() {
@@ -69,10 +81,27 @@ $(document).ready(function() {
     $("#timer").html("<h2>" + number + "</h2>");
     if (number === 0) {
       stop();
+      $("#timer").html("<h2>Times Up!</h2>");
+      $("#Question").html("");
+
+      //$("#Correct").html(correctAns);
     }
+    // sec5();
   }
   //function to stop/cancel/reset timer
   function stop() {
     clearInterval(timer);
   }
+  // function sec5() {
+  //   timer = setInterval(decrement, 1000);
+  // }
+  // //prints timer results, stops at 0
+  // function decrement() {
+  //   numberTwo--;
+
+  //   if (numberTwo === 0) {
+  //     stop();
+  //     //goes to next question
+  //   }
+  // }
 });
