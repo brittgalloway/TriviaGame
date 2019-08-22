@@ -1,7 +1,15 @@
 $(document).ready(function() {
   //variables
-  // let number = 30;
-  // let numberTwo = 5;
+
+  //on button click, timer starts
+  $("#button").click(function() {
+    // run();
+    $("#button").hide();
+    loadQuestion();
+  });
+  $(document).on("click", ".answer-button", function(event) {
+    clicked(event);
+  });
   let timer;
   let timer2;
 
@@ -81,31 +89,44 @@ $(document).ready(function() {
       );
     }
   }
-  function nextQuestion() {}
+  function nextQuestion() {
+    timeCount = 30;
+    $("#timer").html(timeCount);
+    currentQuestion++;
+    loadQuestion();
+  }
   function timeUp() {}
   function results() {}
-  function clicked(e) {
+  function clicked(event) {
     clearInterval(timer);
-    if ($(e.target).data("name") == questions[currentQuestion].correct) {
+    if ($(event.target).data("name") == questions[currentQuestion].correct) {
       answeredRight();
     } else {
       answeredWrong();
     }
   }
-  function answeredRight() {}
-  function answeredWrong() {}
+  function answeredRight() {
+    alert("you got it!");
+    clearInterval(timer);
+    correct++;
+    $("#right").html("That's Right!");
+    if (currentQuestion == questionArray.length - 1) {
+      setTimeout(results, 5000);
+    } else {
+      setTimeout(nextQuestion, 5000);
+    }
+  }
+  function answeredWrong() {
+    alert("you got it wrong!");
+    incorrect++;
+    $("#right").html("Sorry, that's wrong!");
+    if (currentQuestion == questionArray.length - 1) {
+      setTimeout(results, 5000);
+    } else {
+      setTimeout(nextQuestion, 5000);
+    }
+  }
   function reset() {}
-
-  //on button click, timer starts
-  $("#button").click(function() {
-    // run();
-    $("#button").hide();
-    loadQuestion();
-  });
-
-  $(document).on("click", ".answer-button", function(e) {
-    clicked(e);
-  });
 
   //starts
   //   function questionsAnswers() {
