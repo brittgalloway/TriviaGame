@@ -84,24 +84,28 @@ $(document).ready(function() {
   function nextQuestion() {}
   function timeUp() {}
   function results() {}
-  function clicked() {}
+  function clicked(e) {
+    clearInterval(timer);
+    if ($(e.target).data("name") == questions[currentQuestion].correct) {
+      answeredRight();
+    } else {
+      answeredWrong();
+    }
+  }
   function answeredRight() {}
   function answeredWrong() {}
   function reset() {}
 
-  // const answerArray = [b, b, c, d, a];
   //on button click, timer starts
   $("#button").click(function() {
     // run();
     $("#button").hide();
     loadQuestion();
-    // $("#Question").html("<h2>" + questionArray[0].q + "</h2>");
-    // $("#Question").append("<h2>" + questionArray[0].a + "</h2>");
-    // $("#Question").append("<h2>" + questionArray[0].b + "</h2>");
-    // $("#Question").append("<h2>" + questionArray[0].c + "</h2>");
-    // $("#Question").append("<h2>" + questionArray[0].d + "</h2>");
   });
-  //shows starting number
+
+  $(document).on("click", ".answer-button", function(e) {
+    clicked(e);
+  });
 
   //starts
   //   function questionsAnswers() {
