@@ -69,14 +69,14 @@ $(document).ready(function() {
   function loadQuestion() {
     timer = setInterval(timeCount, 1000);
     $("#Question").html(questions[currentQuestion].q);
-    for (let index = 0; index < questionArray.correct.length; index++) {
+    for (let index = 0; index < questions[currentQuestion].a.length; index++) {
       $("#answers").append(
         '<button class="answerButton" id="button-' +
           index +
           '"data-name ="' +
-          questions[currentQuestion].correct[index] +
+          questions[currentQuestion].a[index] +
           '">' +
-          questions[currentQuestion].correct[index] +
+          questions[currentQuestion].a[index] +
           "</button>"
       );
     }
