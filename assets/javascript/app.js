@@ -7,7 +7,7 @@ $(document).ready(function() {
     $("#button").hide();
     loadQuestion();
   });
-  $(document).on("click", ".answer-button", function(event) {
+  $(document).on("click", ".answerButton", function(event) {
     clicked(event);
   });
   let timer;
@@ -95,7 +95,18 @@ $(document).ready(function() {
     currentQuestion++;
     loadQuestion();
   }
-  function timeUp() {}
+  function timeUp() {
+    clearInterval(timer);
+    $("#timer").html("<h2>Out of Time!</h2>");
+    $("#answers").html(
+      "The correct Answer is: " + questions[currentQuestion].correct
+    );
+    if (currentQuestion == questionArray.length - 1) {
+      setTimeout(results, 5000);
+    } else {
+      setTimeout(nextQuestion, 5000);
+    }
+  }
   function results() {}
   function clicked(event) {
     clearInterval(timer);
@@ -114,6 +125,9 @@ $(document).ready(function() {
       setTimeout(results, 5000);
     } else {
       setTimeout(nextQuestion, 5000);
+      $("#answers").html(
+        "The correct Answer is: " + questions[currentQuestion].correct
+      );
     }
   }
   function answeredWrong() {
@@ -124,6 +138,9 @@ $(document).ready(function() {
       setTimeout(results, 5000);
     } else {
       setTimeout(nextQuestion, 5000);
+      $("#answers").html(
+        "The correct Answer is: " + questions[currentQuestion].correct
+      );
     }
   }
   function reset() {}
