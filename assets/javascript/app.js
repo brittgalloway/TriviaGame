@@ -54,6 +54,29 @@ $(document).ready(function() {
     }
   ];
 
+  let questions = questionArray.q;
+  let currentQuestion = 0;
+  let timeCount = 30;
+  let correct = 0;
+  let incorrect = 0;
+
+  function timeLimit() {
+    timeCount--;
+    $("#timer").html(timeCount);
+    if (timeCount <= 0) {
+      $("#timer").html("<h2>Times Up!</h2>");
+      timeUp();
+    }
+  }
+  function loadQuestion() {}
+  function nextQuestion() {}
+  function timeUp() {}
+  function results() {}
+  function clicked() {}
+  function answeredRight() {}
+  function answeredWrong() {}
+  function reset() {}
+
   // const answerArray = [b, b, c, d, a];
   //on button click, timer starts
   $("#button").click(function() {
