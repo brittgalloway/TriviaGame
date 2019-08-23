@@ -76,6 +76,7 @@ $(document).ready(function() {
   }
   function loadQuestion() {
     timer = setInterval(timeCount, 1000);
+    $("#timer").html(timeLimit(timer));
     $("#Question").html(questions[currentQuestion].q);
     for (let index = 0; index < questions[currentQuestion].a.length; index++) {
       $("#answers").append(
@@ -107,7 +108,12 @@ $(document).ready(function() {
       setTimeout(nextQuestion, 5000);
     }
   }
-  function results() {}
+  function results() {
+    clearInterval(timer);
+    $("#timer").html("All done!");
+    $("#right").html("Correct: " + correct);
+    $("#wrong").html("Incorrect: " + incorrect);
+  }
   function clicked(event) {
     clearInterval(timer);
     if ($(event.target).data("name") == questions[currentQuestion].correct) {
@@ -117,7 +123,6 @@ $(document).ready(function() {
     }
   }
   function answeredRight() {
-    alert("you got it!");
     clearInterval(timer);
     correct++;
     $("#right").html("That's Right!");
@@ -131,7 +136,6 @@ $(document).ready(function() {
     }
   }
   function answeredWrong() {
-    alert("you got it wrong!");
     incorrect++;
     $("#right").html("Sorry, that's wrong!");
     if (currentQuestion == questionArray.length - 1) {
@@ -143,7 +147,14 @@ $(document).ready(function() {
       );
     }
   }
-  function reset() {}
+  //for reset button
+  function reset() {
+    currentQuestion = 0;
+    timeCount = 0;
+    correct = 0;
+    incorrect = 0;
+    loadQuestion();
+  }
 
   //starts
   //   function questionsAnswers() {
