@@ -22,7 +22,7 @@ $(document).ready(function() {
       a: ["Cubix", "ReBoot", "Jimmy Neutron", "Toy Story"],
 
       correct: "ReBoot",
-      pic: "images/reboot.jpg"
+      pic: "assets/images/reboot.jpg"
     },
     {
       q: "What was the first animated feature movie?",
@@ -34,13 +34,13 @@ $(document).ready(function() {
       ],
 
       correct: "Adventures of Prince Achmed",
-      pic: "images/princeAchmed.jpg"
+      pic: "assets/images/princeAchmed.jpg"
     },
     {
       q: "Which was Walt Disney's favorite movie that he produced?",
       a: ["Snow White", "101 Dalmations", "Cinderella", "Bambi"],
       correct: "Cinderella",
-      pic: "images/cinderella.jpg"
+      pic: "assets/images/cinderella.jpg"
     },
     {
       q: "Which is NOT a Don Bluth movie?",
@@ -51,14 +51,14 @@ $(document).ready(function() {
         "Quest for Camelot"
       ],
       correct: "Quest for Camelot",
-      pic: "images/questcamelot.jpg"
+      pic: "assets/images/questcamelot.jpg"
     },
     {
       q: "Who was Walt Disney's personal favorite concept artist?",
       a: ["Mary Blair", "Glene Keane", "Floyd Norman", "Don Lusk"],
 
       correct: "Mary Blair",
-      pic: "images/maryblair.jpg"
+      pic: "assets/images/maryblair.jpg"
     }
   ];
 
@@ -123,6 +123,8 @@ $(document).ready(function() {
     $("#right").html(
       "The correct Answer is: " + questions[currentQuestion].correct
     );
+    //adds image to screen
+    $("#right").append("<img src=" + questions[currentQuestion].pic + ">");
 
     //if there are no more questions, go to results screen after 5sec
     if (currentQuestion == questionArray.length - 1) {
@@ -166,7 +168,8 @@ $(document).ready(function() {
     $("#right").append(
       "The correct Answer is: " + questions[currentQuestion].correct
     );
-    $("#right").append("<img src='questions[currentQuestion].pic'>");
+    //adds image to screen
+    $("#right").append("<img src=" + questions[currentQuestion].pic + ">");
     //goes to result screen after 5sec
     if (currentQuestion == questionArray.length - 1) {
       setTimeout(results, 5000);
@@ -186,6 +189,8 @@ $(document).ready(function() {
     $("#right").append(
       "The correct Answer is: " + questions[currentQuestion].correct
     );
+    //adds image to screen
+    $("#right").append("<img src=" + questions[currentQuestion].pic + ">");
     //if no questions go to results screen after 5 sec
     if (currentQuestion == questionArray.length - 1) {
       setTimeout(results, 5000);
