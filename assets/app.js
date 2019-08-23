@@ -54,11 +54,57 @@ $(document).ready(function() {
       pic: "assets/images/questcamelot.jpg"
     },
     {
+      q: "Rankin-Bass Productions did not work on which of these?",
+      a: ["Thundercats", "The Last Unicorn", "SilverHawks", "Captian Planet"],
+      correct: "Captian Planet",
+      pic: "assets/images/questcamelot.jpg"
+    },
+    {
       q: "Who was Walt Disney's personal favorite concept artist?",
       a: ["Mary Blair", "Glene Keane", "Floyd Norman", "Don Lusk"],
 
       correct: "Mary Blair",
       pic: "assets/images/maryblair.jpg"
+    },
+    {
+      q:
+        "How many years after the debut of Mickey Mouse was it before Minnie Mouse made her first appearance?",
+      a: ["5", "1", "Same Year", "2"],
+
+      correct: "Same Year",
+      pic: "assets/images/mickic.webp"
+    },
+    {
+      q: "How many nefews does Donald Duck have?",
+      a: ["5", "1", "3", "4"],
+
+      correct: "3",
+      pic: "assets/images/huey-dewey-louie.jpg"
+    },
+    {
+      q: "Which two characters did the same actor voice?",
+      a: [
+        "Batman and Tweety Bird",
+        "Eyore and Optimus Prime",
+        "Snow White and Maleficent",
+        "Jafar and Papa Smurf"
+      ],
+
+      correct: "Eyore and Optimus Prime",
+      pic: "assets/images/eeyore_optimus.jpg"
+    },
+    {
+      q:
+        'What cartoon characters were created when Professor Utonium accidentally added "Chemical X" to a concoction that also included sugar, spice, and everything nice?',
+      a: [
+        "Sailor Scouts",
+        "Bratz Angels",
+        "PowerPuff Girls",
+        "Teenage Mutant Ninja Turtles"
+      ],
+
+      correct: "PowerPuff Girls",
+      pic: "assets/images/ppg.jpg"
     }
   ];
 
@@ -85,7 +131,7 @@ $(document).ready(function() {
     timeCount = 30;
     //sets timer to decrement by 1000
     timer = setInterval(timeLimit, 1000);
-    //prints timer on screen **currently starts with a 3????
+    //prints timer on screen
     $("#timer").html(30);
     //prints q property in the currentQuestion object
     $("#Question").html(questions[currentQuestion].q);
@@ -114,7 +160,7 @@ $(document).ready(function() {
   }
   //function for timer reaching 0
   function timeUp() {
-    reset();
+    clear();
     //adds to incorrect
     incorrect++;
     //prints Out of Time!
@@ -123,7 +169,7 @@ $(document).ready(function() {
   }
   //results function, clears timer and displays number of correct answers and number of incorrect answers
   function results() {
-    reset();
+    clear();
 
     $("#timer").html("You Made It!");
     $("#right").html("Correct: " + correct);
@@ -146,7 +192,7 @@ $(document).ready(function() {
   }
   //function for correct answers
   function answeredRight() {
-    reset();
+    clear();
     //count for correct answer increases by 1
     correct++;
     //prints That's Right! on screen
@@ -155,7 +201,7 @@ $(document).ready(function() {
   }
   //function for wrong answers
   function answeredWrong() {
-    reset();
+    clear();
     //incorrect answers increase by 1
     incorrect++;
     //display Sorry, that's wrong!
@@ -182,7 +228,7 @@ $(document).ready(function() {
   }
   // //for reset button to reset game
   function resetButton() {
-    reset();
+    clear();
     $("#right").empty();
     $("#wrong").empty();
     currentQuestion = 0;
@@ -193,7 +239,7 @@ $(document).ready(function() {
     loadQuestion();
   }
   //clears divs and the timer
-  function reset() {
+  function clear() {
     $("#timer").empty();
     $("#Question").empty();
     $("#answers").empty();
