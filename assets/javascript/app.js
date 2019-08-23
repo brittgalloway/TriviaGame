@@ -79,7 +79,7 @@ $(document).ready(function() {
     $("#timer").html(timeLimit(timer));
     $("#Question").html(questions[currentQuestion].q);
     for (let index = 0; index < questions[currentQuestion].a.length; index++) {
-      $("#answers").append(
+      $("#answers").html(
         '<button class="answerButton" id="button-' +
           index +
           '"data-name ="' +
