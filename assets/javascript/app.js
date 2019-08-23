@@ -3,7 +3,6 @@ $(document).ready(function() {
 
   //on button click, timer starts
   $("#button").click(function() {
-    // run();
     $("#button").hide();
     loadQuestion();
   });
@@ -11,7 +10,6 @@ $(document).ready(function() {
     clicked(event);
   });
   let timer;
-  let timer2;
 
   // questions and answers
   const questionArray = [
@@ -79,7 +77,7 @@ $(document).ready(function() {
     $("#timer").html(timeLimit(timer));
     $("#Question").html(questions[currentQuestion].q);
     for (let index = 0; index < questions[currentQuestion].a.length; index++) {
-      $("#answers").html(
+      $("#answers").append(
         '<button class="answerButton" id="button-' +
           index +
           '"data-name ="' +
@@ -155,61 +153,4 @@ $(document).ready(function() {
     incorrect = 0;
     loadQuestion();
   }
-
-  //starts
-  //   function questionsAnswers() {
-  //     for (let index = 0; index < questionArray.length; index++) {
-  //       // const questions = questionArray[index];
-  //       $("#Question").html("<h2>" + questionArray[index].q + "</h2>");
-  //       $("#AnswerA").html("<h2>" + questionArray[index].a + "</h2>");
-  //       $("#AnswerB").html("<h2>" + questionArray[index].b + "</h2>");
-  //       $("#AnswerC").html("<h2>" + questionArray[index].c + "</h2>");
-  //       $("#AnswerD").html("<h2>" + questionArray[index].d + "</h2>");
-  //     }
-  //   }
-
-  //   $(".answers").click(function() {
-  //     alert("A");
-  //   });
-
-  //   // class for answers
-
-  //   // run function for timer
-  //   function run() {
-  //     $("#timer").html("<h2>" + number + "</h2>");
-  //     timer = setInterval(decrement, 1000);
-  //   }
-  //   //prints timer results, stops at 0
-  //   function decrement() {
-  //     number--;
-
-  //     $("#timer").html("<h2>" + number + "</h2>");
-  //     if (number === 0) {
-  //       stop();
-  //       $("#timer").html("<h2>Times Up!</h2>");
-  //       $(".questions").html("");
-
-  //       // sec5();
-  //       // alert("5 up");
-  //       //$("#Correct").html(correctAns);
-  //     }
-  //   }
-  //   //function to stop/cancel/reset timer
-  //   function stop() {
-  //     clearInterval(timer);
-  //   }
-  //   // function sec5() {
-  //   //   timer2 = setInterval(decre, 1000);
-  //   // }
-  //   // //prints timer results, stops at 0
-  //   // function decre() {
-  //   //   numberTwo--;
-
-  //   //   if (numberTwo === 0) {
-  //   //     stop();
-  //   //     numberTwo = 5;
-  //   //     //goes to next question
-  //   //   }
-  //   // }
-  // });
 });
