@@ -10,6 +10,9 @@ $(document).ready(function() {
   $(document).on("click", ".answerButton", function(event) {
     clicked(event);
   });
+  // $(document).on("click", "#reset", function(event) {
+  //   resetButton();
+  // });
 
   // questions and answers
   const questionArray = [
@@ -100,6 +103,8 @@ $(document).ready(function() {
   }
   //function to call the next question
   function nextQuestion() {
+    //clears right id when a new question begins
+    $("#right").html("");
     timeCount = 30;
     //goes to next question
     currentQuestion++;
@@ -108,11 +113,13 @@ $(document).ready(function() {
   }
   //function for timer reaching 0
   function timeUp() {
-    clearInterval(timer);
+    reset();
+    //adds to incorrect
+    incorrect++;
     //prints Out of Time!
     $("#timer").html("<h2>Out of Time!</h2>");
     //prints correct answer for current question
-    $("#answers").html(
+    $("#right").html(
       "The correct Answer is: " + questions[currentQuestion].correct
     );
     //if there are no more questions, go to results screen after 5sec
@@ -125,10 +132,14 @@ $(document).ready(function() {
   }
   //results function, clears timer and displays number of correct answers and number of incorrect answers
   function results() {
-    clearInterval(timer);
+    reset();
+
     $("#timer").html("All done!");
     $("#right").html("Correct: " + correct);
+
     $("#wrong").html("Incorrect: " + incorrect);
+
+    $("#wrong").append("<button id=`resetButton`>Reset</button");
   }
   //function clicked. tests the clicked answer button for the corret answer
   function clicked(event) {
@@ -143,14 +154,13 @@ $(document).ready(function() {
   }
   //function for correct answers
   function answeredRight() {
-    //clear timer
-    clearInterval(timer);
+    reset();
     //count for correct answer increases by 1
     correct++;
     //prints That's Right! on screen
-    $("answers").html("That's Right!");
+    $("#right").html("That's Right!");
     //prints the correct answer on the screen
-    $("#right").html(
+    $("#right").append(
       "The correct Answer is: " + questions[currentQuestion].correct
     );
     //goes to result screen after 5sec
@@ -163,12 +173,13 @@ $(document).ready(function() {
   }
   //function for wrong answers
   function answeredWrong() {
+    reset();
     //incorrect answers increase by 1
     incorrect++;
     //display Sorry, that's wrong!
-    $("#answers").html("Sorry, that's wrong!");
+    $("#right").html("Sorry, that's wrong!");
     //displays correct answer
-    $("#wrong").html(
+    $("#right").append(
       "The correct Answer is: " + questions[currentQuestion].correct
     );
     //if no questions go to results screen after 5 sec
@@ -179,13 +190,20 @@ $(document).ready(function() {
       setTimeout(nextQuestion, 5000);
     }
   }
-  //for reset button
-  //clears varibles and returns to question 1 (index[0])
+  // //for reset button to reset game
+  // function resetButton() {
+  //   currentQuestion = 0;
+  //   timeCount;
+  //   correct = 0;
+  //   incorrect = 0;
+  //   clearInterval(timer);
+  //   loadQuestion();
+  // }
+  //clears divs and the timer
   function reset() {
-    currentQuestion = 0;
-    timeCount = 0;
-    correct = 0;
-    incorrect = 0;
-    loadQuestion();
+    $("#timer").empty();
+    $("#Question").empty();
+    $("#answers").empty();
+    clearInterval(timer);
   }
 });
