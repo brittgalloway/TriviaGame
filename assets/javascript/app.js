@@ -10,9 +10,10 @@ $(document).ready(function() {
   $(document).on("click", ".answerButton", function(event) {
     clicked(event);
   });
-  // $(document).on("click", "#reset", function(event) {
-  //   resetButton();
-  // });
+  //event listener for click function on the reset button
+  $(document).on("click", "#resetButton", function(event) {
+    resetButton();
+  });
 
   // questions and answers
   const questionArray = [
@@ -22,43 +23,43 @@ $(document).ready(function() {
 
       correct: "ReBoot",
       pic: "assets/images/reboot.jpg"
-    },
-    {
-      q: "What was the first animated feature movie?",
-      a: [
-        "Snow White",
-        "Adventures of Prince Achmed",
-        "Tale of the White Serpent",
-        "Fantasmagorie"
-      ],
+    } //,
+    // {
+    //   q: "What was the first animated feature movie?",
+    //   a: [
+    //     "Snow White",
+    //     "Adventures of Prince Achmed",
+    //     "Tale of the White Serpent",
+    //     "Fantasmagorie"
+    //   ],
 
-      correct: "Adventures of Prince Achmed",
-      pic: "assets/images/princeAchmed.jpg"
-    },
-    {
-      q: "Which was Walt Disney's favorite movie that he produced?",
-      a: ["Snow White", "101 Dalmations", "Cinderella", "Bambi"],
-      correct: "Cinderella",
-      pic: "assets/images/cinderella.jpg"
-    },
-    {
-      q: "Which is NOT a Don Bluth movie?",
-      a: [
-        "Anastasia",
-        "An American Tale",
-        "Secret of Nimb",
-        "Quest for Camelot"
-      ],
-      correct: "Quest for Camelot",
-      pic: "assets/images/questcamelot.jpg"
-    },
-    {
-      q: "Who was Walt Disney's personal favorite concept artist?",
-      a: ["Mary Blair", "Glene Keane", "Floyd Norman", "Don Lusk"],
+    //   correct: "Adventures of Prince Achmed",
+    //   pic: "assets/images/princeAchmed.jpg"
+    // },
+    // {
+    //   q: "Which was Walt Disney's favorite movie that he produced?",
+    //   a: ["Snow White", "101 Dalmations", "Cinderella", "Bambi"],
+    //   correct: "Cinderella",
+    //   pic: "assets/images/cinderella.jpg"
+    // },
+    // {
+    //   q: "Which is NOT a Don Bluth movie?",
+    //   a: [
+    //     "Anastasia",
+    //     "An American Tale",
+    //     "Secret of Nimb",
+    //     "Quest for Camelot"
+    //   ],
+    //   correct: "Quest for Camelot",
+    //   pic: "assets/images/questcamelot.jpg"
+    // },
+    // {
+    //   q: "Who was Walt Disney's personal favorite concept artist?",
+    //   a: ["Mary Blair", "Glene Keane", "Floyd Norman", "Don Lusk"],
 
-      correct: "Mary Blair",
-      pic: "assets/images/maryblair.jpg"
-    }
+    //   correct: "Mary Blair",
+    //   pic: "assets/images/maryblair.jpg"
+    // }
   ];
 
   //variables
@@ -139,7 +140,7 @@ $(document).ready(function() {
 
     $("#wrong").html("Incorrect: " + incorrect);
 
-    $("#wrong").append("<button id=`resetButton`>Reset</button");
+    $("#wrong").append("<button id='resetButton'>Reset</button");
   }
   //function clicked. tests the clicked answer button for the corret answer
   function clicked(event) {
@@ -191,14 +192,17 @@ $(document).ready(function() {
     }
   }
   // //for reset button to reset game
-  // function resetButton() {
-  //   currentQuestion = 0;
-  //   timeCount;
-  //   correct = 0;
-  //   incorrect = 0;
-  //   clearInterval(timer);
-  //   loadQuestion();
-  // }
+  function resetButton() {
+    reset();
+    $("#right").empty();
+    $("#wrong").empty();
+    currentQuestion = 0;
+    timeCount;
+    correct = 0;
+    incorrect = 0;
+    clearInterval(timer);
+    loadQuestion();
+  }
   //clears divs and the timer
   function reset() {
     $("#timer").empty();
