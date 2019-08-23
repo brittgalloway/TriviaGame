@@ -119,20 +119,7 @@ $(document).ready(function() {
     incorrect++;
     //prints Out of Time!
     $("#timer").html("<h2>Out of Time!</h2>");
-    //prints correct answer for current question
-    $("#right").html(
-      "The correct Answer is: " + questions[currentQuestion].correct
-    );
-    //adds image to screen
-    $("#right").append("<img src=" + questions[currentQuestion].pic + ">");
-
-    //if there are no more questions, go to results screen after 5sec
-    if (currentQuestion == questionArray.length - 1) {
-      setTimeout(results, 5000);
-    } else {
-      //go to next question after 5sec
-      setTimeout(nextQuestion, 5000);
-    }
+    showAnswer();
   }
   //results function, clears timer and displays number of correct answers and number of incorrect answers
   function results() {
@@ -164,6 +151,21 @@ $(document).ready(function() {
     correct++;
     //prints That's Right! on screen
     $("#right").html("That's Right!");
+    showAnswer();
+  }
+  //function for wrong answers
+  function answeredWrong() {
+    reset();
+    //incorrect answers increase by 1
+    incorrect++;
+    //display Sorry, that's wrong!
+    $("#right").html("Sorry, that's wrong!");
+    //displays correct answer
+    showAnswer();
+  }
+
+  //for answer check conditional
+  function showAnswer() {
     //prints the correct answer on the screen
     $("#right").append(
       "The correct Answer is: " + questions[currentQuestion].correct
@@ -175,27 +177,6 @@ $(document).ready(function() {
       setTimeout(results, 5000);
     } else {
       //goes to question after 5 sec
-      setTimeout(nextQuestion, 5000);
-    }
-  }
-  //function for wrong answers
-  function answeredWrong() {
-    reset();
-    //incorrect answers increase by 1
-    incorrect++;
-    //display Sorry, that's wrong!
-    $("#right").html("Sorry, that's wrong!");
-    //displays correct answer
-    $("#right").append(
-      "The correct Answer is: " + questions[currentQuestion].correct
-    );
-    //adds image to screen
-    $("#right").append("<img src=" + questions[currentQuestion].pic + ">");
-    //if no questions go to results screen after 5 sec
-    if (currentQuestion == questionArray.length - 1) {
-      setTimeout(results, 5000);
-    } else {
-      //go to next question
       setTimeout(nextQuestion, 5000);
     }
   }
