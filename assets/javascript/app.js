@@ -23,43 +23,43 @@ $(document).ready(function() {
 
       correct: "ReBoot",
       pic: "assets/images/reboot.jpg"
-    } //,
-    // {
-    //   q: "What was the first animated feature movie?",
-    //   a: [
-    //     "Snow White",
-    //     "Adventures of Prince Achmed",
-    //     "Tale of the White Serpent",
-    //     "Fantasmagorie"
-    //   ],
+    },
+    {
+      q: "What was the first animated feature movie?",
+      a: [
+        "Snow White",
+        "Adventures of Prince Achmed",
+        "Tale of the White Serpent",
+        "Fantasmagorie"
+      ],
 
-    //   correct: "Adventures of Prince Achmed",
-    //   pic: "assets/images/princeAchmed.jpg"
-    // },
-    // {
-    //   q: "Which was Walt Disney's favorite movie that he produced?",
-    //   a: ["Snow White", "101 Dalmations", "Cinderella", "Bambi"],
-    //   correct: "Cinderella",
-    //   pic: "assets/images/cinderella.jpg"
-    // },
-    // {
-    //   q: "Which is NOT a Don Bluth movie?",
-    //   a: [
-    //     "Anastasia",
-    //     "An American Tale",
-    //     "Secret of Nimb",
-    //     "Quest for Camelot"
-    //   ],
-    //   correct: "Quest for Camelot",
-    //   pic: "assets/images/questcamelot.jpg"
-    // },
-    // {
-    //   q: "Who was Walt Disney's personal favorite concept artist?",
-    //   a: ["Mary Blair", "Glene Keane", "Floyd Norman", "Don Lusk"],
+      correct: "Adventures of Prince Achmed",
+      pic: "assets/images/princeAchmed.jpg"
+    },
+    {
+      q: "Which was Walt Disney's favorite movie that he produced?",
+      a: ["Snow White", "101 Dalmations", "Cinderella", "Bambi"],
+      correct: "Cinderella",
+      pic: "assets/images/cinderella.jpg"
+    },
+    {
+      q: "Which is NOT a Don Bluth movie?",
+      a: [
+        "Anastasia",
+        "An American Tale",
+        "Secret of Nimb",
+        "Quest for Camelot"
+      ],
+      correct: "Quest for Camelot",
+      pic: "assets/images/questcamelot.jpg"
+    },
+    {
+      q: "Who was Walt Disney's personal favorite concept artist?",
+      a: ["Mary Blair", "Glene Keane", "Floyd Norman", "Don Lusk"],
 
-    //   correct: "Mary Blair",
-    //   pic: "assets/images/maryblair.jpg"
-    // }
+      correct: "Mary Blair",
+      pic: "assets/images/maryblair.jpg"
+    }
   ];
 
   //variables
@@ -86,7 +86,7 @@ $(document).ready(function() {
     //sets timer to decrement by 1000
     timer = setInterval(timeLimit, 1000);
     //prints timer on screen **currently starts with a 3????
-    $("#timer").html(timer);
+    $("#timer").html(30);
     //prints q property in the currentQuestion object
     $("#Question").html(questions[currentQuestion].q);
     //loops through the currentQuestion a property (an array) to display each indaex (answer) as a button
@@ -135,11 +135,12 @@ $(document).ready(function() {
   function results() {
     reset();
 
-    $("#timer").html("All done!");
+    $("#timer").html("You Made It!");
     $("#right").html("Correct: " + correct);
 
     $("#wrong").html("Incorrect: " + incorrect);
 
+    $("#wrong").append("<h3>Play Again?</h3>");
     $("#wrong").append("<button id='resetButton'>Reset</button");
   }
   //function clicked. tests the clicked answer button for the corret answer
