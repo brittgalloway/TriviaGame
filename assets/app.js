@@ -57,7 +57,7 @@ $(document).ready(function() {
       q: "Rankin-Bass Productions did not work on which of these?",
       a: ["Thundercats", "The Last Unicorn", "SilverHawks", "Captian Planet"],
       correct: "Captian Planet",
-      pic: "assets/images/questcamelot.jpg"
+      pic: "assets/images/captainplanet.jpg"
     },
     {
       q: "Who was Walt Disney's personal favorite concept artist?",
@@ -72,14 +72,14 @@ $(document).ready(function() {
       a: ["5", "1", "Same Year", "2"],
 
       correct: "Same Year",
-      pic: "assets/images/mickic.webp"
+      pic: "assets/images/mickie.webp"
     },
     {
       q: "How many nefews does Donald Duck have?",
       a: ["5", "1", "3", "4"],
 
       correct: "3",
-      pic: "assets/images/huey-dewey-louie.jpg"
+      pic: "assets/images/huey-dewey-louie.gif"
     },
     {
       q: "Which two characters did the same actor voice?",
@@ -171,17 +171,19 @@ $(document).ready(function() {
   function results() {
     clear();
 
-    $("#timer").html("You Made It!");
+    $("#timer").html("All Answers In!");
     $("#right").html("Correct: " + correct);
 
     $("#wrong").html("Incorrect: " + incorrect);
 
     $("#wrong").append("<h3>Play Again?</h3>");
+    //reset button is displayed on screen
     $("#wrong").append("<button id='resetButton'>Reset</button");
   }
-  //function clicked. tests the clicked answer button for the corret answer
+  //function clicked
   function clicked(event) {
     clearInterval(timer);
+    //tests the clicked answer button for the corret answer
     if ($(event.target).data("name") == questions[currentQuestion].correct) {
       //runs function for correct answers
       answeredRight();
