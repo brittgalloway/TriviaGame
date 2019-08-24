@@ -38,7 +38,8 @@ a:link {
 a:visited {
   color: #4aaaa5;
 }
-a:hover {
+a,
+.answerButton:hover {
   color: #ffce6e;
 }
 
@@ -49,6 +50,12 @@ h1 {
   font-size: 50pt;
   padding-left: 20px;
   padding-right: 20px;
+}
+h2 {
+  display: inline-block;
+}
+h3 {
+  display: inline-block;
 }
 body {
   background: #dddddd;
@@ -62,7 +69,8 @@ main {
   margin-right: auto;
 }
 
-#button {
+#button,
+#resetButton {
   margin-left: 50%;
   margin-right: 50%;
   border-radius: 12px;
@@ -72,9 +80,53 @@ main {
   font-size: 18pt;
 }
 #timer {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Georgia", Times, Times New Roman, serif;
   color: #4aaaa5;
   font-size: 38pt;
   padding-top: 30px;
   text-align: center;
+}
+main {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.questions {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #333333;
+  font-size: 18pt;
+  padding-top: 30px;
+  text-align: center;
+}
+.answerButton {
+  margin-left: 50%;
+  margin-right: 50%;
+  border-radius: 12px;
+  padding: 15px 32px;
+  background-color: white;
+  color: #4aaaa5;
+  font-size: 18pt;
+}
+#Question {
+  padding: 20px;
+}
+#finalScores {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  color: #333333;
+  font-size: 18pt;
+  padding-top: 30px;
+  text-align: left;
+}
+#right {
+  display: inline-block;
+}
+#wrong {
+  display: inline-block;
+}
+img {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+  padding: 20px;
 }
