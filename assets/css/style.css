@@ -47,8 +47,7 @@ h1 {
   color: #4aaaa5;
   text-align: center;
   font-size: 50pt;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 20px 20px 0px 20px;
 }
 h2 {
   font-size: 30pt;
