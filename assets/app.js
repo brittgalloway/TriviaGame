@@ -75,7 +75,7 @@ $(document).ready(function() {
       pic: "assets/images/mickie.webp"
     },
     {
-      q: "How many nefews does Donald Duck have?",
+      q: "How many nephews does Donald Duck have?",
       a: ["5", "1", "3", "4"],
 
       correct: "3",
@@ -216,7 +216,7 @@ $(document).ready(function() {
   function showAnswer() {
     //prints the correct answer on the screen
     $("#right").append(
-      "The correct Answer is: " + questions[currentQuestion].correct + "</br>"
+      "The Correct Answer is: " + questions[currentQuestion].correct + "</br>"
     );
     //adds image to screen
     $("#right").append("<img src=" + questions[currentQuestion].pic + ">");
