@@ -174,9 +174,9 @@ $(document).ready(function() {
     $("#timer").html("All Answers In!");
     $("#right").html("Correct: " + correct);
 
-    $("#wrong").html("Incorrect: " + incorrect);
+    $("#wrong").html("Incorrect: " + incorrect + "</br>");
 
-    $("#wrong").append("<h3>Play Again?</h3>");
+    $("#wrong").append("<h3>Play Again?</h3></br>");
     //reset button is displayed on screen
     $("#wrong").append("<button id='resetButton'>Reset</button");
   }
@@ -198,7 +198,7 @@ $(document).ready(function() {
     //count for correct answer increases by 1
     correct++;
     //prints That's Right! on screen
-    $("#right").html("That's Right!");
+    $("#right").html("That's Right!</br>");
     showAnswer();
   }
   //function for wrong answers
@@ -207,7 +207,7 @@ $(document).ready(function() {
     //incorrect answers increase by 1
     incorrect++;
     //display Sorry, that's wrong!
-    $("#right").html("Sorry, that's wrong!");
+    $("#right").html("Sorry, that's wrong!</br>");
     //displays correct answer
     showAnswer();
   }
@@ -216,7 +216,7 @@ $(document).ready(function() {
   function showAnswer() {
     //prints the correct answer on the screen
     $("#right").append(
-      "The correct Answer is: " + questions[currentQuestion].correct
+      "The correct Answer is: " + questions[currentQuestion].correct + "</br>"
     );
     //adds image to screen
     $("#right").append("<img src=" + questions[currentQuestion].pic + ">");
