@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  // FOR SIDE NAV----------------------------------------------------------------
+  $(".sidenav").sidenav();
   //on button click, timer starts
   $("#button").click(function() {
     //button disappears
@@ -138,13 +140,13 @@ $(document).ready(function() {
     //loops through the currentQuestion a property (an array) to display each indaex (answer) as a button
     for (let index = 0; index < questions[currentQuestion].a.length; index++) {
       $("#answers").append(
-        '<button class="answerButton" id="button-' +
+        '<div class="row"> <div class="col s12 m12 l12"><button class="answerButton" id="button-' +
           index +
           '"data-name ="' +
           questions[currentQuestion].a[index] +
           '">' +
           questions[currentQuestion].a[index] +
-          "</button>"
+          "</button></div></div>"
       );
     }
   }

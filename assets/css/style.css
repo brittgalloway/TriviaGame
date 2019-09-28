@@ -1,56 +1,24 @@
-header {
-  background: #fff;
-  border-bottom: solid;
-  border-bottom-width: 100%;
-  border-color: #cccccc;
-  height: 77px;
-  width: 100%;
+h1,
+.brand-logo,
+nav li,
+footer {
+  font-family: "Gruppo", cursive;
+  line-height: 54px;
 }
-
-nav {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  color: #777777;
-  size: 18pt;
-  float: right;
-  padding-top: 30px;
-  margin-right: 100px;
+.nav-wrapper {
+  width: 70%;
+  margin: 0 auto;
 }
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+a {
+  color: #00bfa5;
 }
-li {
-  display: inline;
-  padding: 0px 25px 0px 25px;
-  border-right: 1px solid #dddddd;
-}
-
-li:last-child {
-  border-right: none;
-}
-
-a:link {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  color: #777777;
-  text-decoration: none;
-}
-a:visited {
-  color: #4aaaa5;
-}
-a :hover {
-  color: #ffce6e;
-}
-
 h1 {
-  font-family: "Georgia", Times, Times New Roman, serif;
-  color: #4aaaa5;
-  text-align: center;
-  font-size: 50pt;
-  padding: 20px 20px 0px 20px;
+  font-family: "Gruppo", cursive;
+  font-size: 54px;
 }
 h2 {
-  font-size: 30pt;
+  font-family: "Gruppo", cursive;
+  font-size: 20pt;
   padding: 20px;
   margin: 0px 20px;
 }
@@ -58,21 +26,19 @@ h3 {
   display: inline-block;
 }
 body {
-  background: #dddddd;
-  background: url(../images/fishnets-and-hearts.png);
-  margin: 0px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
+
 main {
-  background: #fff;
-  width: 960px;
-  height: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 30px;
+  flex: 1 0 auto;
+  padding-bottom: 50px;
 }
 
 #button,
 #resetButton {
+  font-family: "Catamaran", sans-serif;
   border-radius: 12px;
   padding: 15px 32px;
   background-color: white;
@@ -83,19 +49,14 @@ main {
   margin-left: 46%;
 }
 #timer {
-  font-family: "Georgia", Times, Times New Roman, serif;
+  font-family: "Gruppo", cursive;
+  font-size: 54px;
   color: #4aaaa5;
-  font-size: 38pt;
-
   text-align: center;
 }
-main {
-  width: 960px;
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .questions {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Catamaran", sans-serif;
   color: #2b5c59;
   font-size: 18pt;
   padding-top: 20px;
@@ -117,7 +78,7 @@ main {
 }
 
 #finalScores {
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "Catamaran", sans-serif;
   color: #2b5c59;
   font-size: 18pt;
   padding-top: 10px;

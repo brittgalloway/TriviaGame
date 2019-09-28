@@ -2,61 +2,126 @@
 <html lang="en">
   <head>
     <title>Trivia Game</title>
+    <!-- GOOGLE FONTS---------------------------------------------------------- -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Exo:900|Gruppo|Source+Code+Pro:700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- GOOGLE ICONS------------------------------------------------------------ -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- MATERIALIZE Compiled and minified CSS --------------------------------->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- <link rel="stylesheet" href="assets/css/reset.css" /> -->
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="https://brittgalloway.github.io/Basic-Portfolio/about_materialize.html"
-              >About</a
+      <nav class=" teal">
+        <div class="nav-wrapper">
+          <a
+            href="https://brittgalloway.github.io/Basic-Portfolio/index.html"
+            class="brand-logo hide-on-small-only"
+            >Brittney Galloway</a
+          >
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+              <a
+                href="https://brittgalloway.github.io/Basic-Portfolio/about_materialize.html"
+                >About</a
               >
             </li>
             <li>
               <a
-              href="https://brittgalloway.github.io/Basic-Portfolio/portfolio_materialize.html"
-              >Portfolio</a
+                href="https://brittgalloway.github.io/Basic-Portfolio/portfolio_materialize.html"
+                >Portfolio</a
               >
             </li>
             <li>
-            <a
+              <a
+                href="https://brittgalloway.github.io/Basic-Portfolio/contact_materialize.html"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav red lighten-5 " id="mobile-demo">
+        <li>
+          <a
+            class="teal-text text-lighten-2"
+            href="https://brittgalloway.github.io/Basic-Portfolio/index.html"
+            >Home</a
+          >
+        </li>
+        <li>
+          <a
+            class="teal-text text-lighten-2"
+            href="https://brittgalloway.github.io/Basic-Portfolio/about_materialize.html"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            class="teal-text text-lighten-2"
+            href="https://brittgalloway.github.io/Basic-Portfolio/portfolio_materialize.html"
+            >Portfolio</a
+          >
+        </li>
+        <li>
+          <a
+            class="teal-text text-lighten-2"
             href="https://brittgalloway.github.io/Basic-Portfolio/contact_materialize.html"
             >Contact</a
-            >
-          </li>
-        </ul>
-      </nav>
+          >
+        </li>
+      </ul>
     </header>
-  <body>
+
     <main>
+      <div class="container">
+        <h1 class="teal-text text-lighten-2 center-align ">
+          Trivial Animation Trivia!
+        </h1>
 
-      <h1>Trivial Animation Trivia!</h1>
-      <button id="button">Start</button>
-      
-      <div id="timer"></div>
-      
-      <div class= questions>
+        <button id="button">Start</button>
 
-        <div id="Question"></div>
-        <div id="answers">
-         
+        <div id="timer"></div>
 
+        <div class="questions ">
+          <div id="Question"></div>
+
+          <div id="answers"></div>
+        </div>
+
+        <div id="finalScores ">
+          <div id="right"></div>
+          <div id="wrong"></div>
         </div>
       </div>
-      
-  
-    <div id="finalScores">
-      <div id="right"></div>
-      <div id="wrong"></div>
-    </div> 
     </main>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"
-></script>
-<script src="assets/app.js"></script>
+    <footer class="page-footer teal lighten-1">
+      <div class="footer-copyright">
+        <div class="container center-align">
+          © 2019 Brittney Galloway
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- MATERIALIZE Compiled and minified JavaScript ----------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/app.js"></script>
   </body>
 </html>
