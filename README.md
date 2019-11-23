@@ -1,5 +1,5 @@
 # Trivia Game
-This is a quiz created with JQuery. 
+This is a quiz on Animation Trivia created with JQuery. 
 
 The quiz starts by clicking on the "start" button. 
 <br>
